@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.mvcedit.models.Partner" table="partners">
+		<id name="phone" type="java.lang.Integer"></id>
+		<property name="firstName" type="java.lang.String"></property>
+		<property name="lastName" type="java.lang.String"></property>
+		<property name="vk" type="java.lang.String"></property>
+		<property name="facebook" type="java.lang.String"></property>
+		<property name="site" type="java.lang.String"></property>
+		<property name="bankUser" type="java.lang.String"></property>
+		<property name="techniks" type="java.lang.String"></property>
+		<property name="oSebe" type="java.lang.String"></property>
+	</class>
+
+</hibernate-mapping>

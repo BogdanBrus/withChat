@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!--- *************************** For testIoC******************* <bean id="test" 
+		class="test_IoC.PrintHello" init-method="init"> <constructor-arg value="Hello 
+		world" /> <property name="a" value="215" /> </bean> -->
+	<!---********************************************************** -->
+
+
+
+
+	<!---********************testAOP (for special method Single.class) ******************** -->
+	<bean id="recomendId" class="testAOP.Recomend" />
+
+	<bean id="poincutId" class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedName" value="writeB"></property> <!---writeB - method for advice -->
+	</bean>
+
+	<!--- bean for LINK Pointcut and Recomend.class -->
+	<bean id="adviceId" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="poincutId"></property>
+		<property name="advice" ref="recomendId"></property>
+	</bean>
+
+
+
+	<!---******************** For testAOP (for all method Single.class) ******************** -->
+	<bean id="singleId" class="testAOP.Single" />
+	
+	<!---<bean id="recomendId" class="testAOP.Recomend" /> -->
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="singleId" />
+		<property name="interceptorNames">
+			<list>
+				<value>adviceId</value><!-- recomendId for all method-->
+			</list>
+		</property>
+	</bean>
+	<!---********************************************************** -->
+
+
+
+</beans>
