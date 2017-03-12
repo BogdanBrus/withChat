@@ -1,4 +1,4 @@
-package org.mvcedit;
+package org.mvcedit.controllers;
 
 import java.util.List;
 

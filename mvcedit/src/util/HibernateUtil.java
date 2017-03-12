@@ -9,7 +9,6 @@ public class HibernateUtil {
 	private static SessionFactory sessionFactory;
 	private HibernateUtil(){}//Singleton = close construct
 	
-	
 	//sessionFactory init()
 	static{
 		try{
