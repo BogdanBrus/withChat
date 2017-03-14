@@ -1,4 +1,4 @@
-package general;
+package javaTest;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.mvcedit.models.Partner;
 
 import daoImpl.TempDaoImpl;
 
-public class Project {
+public class testFactory {
 
 	public static void main(String[] args) throws SQLException {
 		

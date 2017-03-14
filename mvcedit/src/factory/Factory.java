@@ -1,11 +1,11 @@
-package general;
+package factory;
 
 import org.mvcedit.models.Partner;
 
 import daoImpl.TempDaoImpl;
 
 
-public class Factory {
+public class Factory{
 	public static Factory instance = new Factory();
 	private TempDaoImpl partnersTest;
 	//private Partner partner;
