@@ -13,6 +13,9 @@ import javax.persistence.Table;
 @Table(name="partners")
 public class Partner extends Model implements Serializable {// extends Model
 	
+	private static final long serialVersionUID = 1L;
+
+
 	public Partner() {
 		super();
 	}

@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.mvcedit.models.Partner;
+import org.mvcedit.util.HibernateUtil;
 
 import dao.Dao;
-import util.HibernateUtil;
 
 public class TempDaoImpl implements Dao{
 	    private Class currentClass = null;

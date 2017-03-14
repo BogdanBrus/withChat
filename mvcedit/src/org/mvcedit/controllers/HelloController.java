@@ -39,16 +39,23 @@ public class HelloController {
 	}
 	
 	//for hibernate
-	@RequestMapping("/all")
+	@RequestMapping("/book")
 	public ModelAndView allList() {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		List<Partner> partners = servicePartner.getAllPartner();
 		modelAndView.addObject("partners",partners);
-		modelAndView.setViewName("all");
+		modelAndView.setViewName("book");
 		return modelAndView;
 	}
 	
-	
+	@RequestMapping("/login")
+	public ModelAndView log(){
+		ModelAndView modelAndView = new ModelAndView();
+		
+		modelAndView.setViewName("login");
+		return modelAndView;
+
+	}
 	
 }

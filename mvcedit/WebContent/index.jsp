@@ -1,3 +1,8 @@
+<% response.sendRedirect("login.jsp"); %>
+
+
+
+ <!-- 
 <html>
 <head>
 <title>Spring MVC </title>
@@ -10,3 +15,4 @@
 	
 </body>
 </html>
+-->
