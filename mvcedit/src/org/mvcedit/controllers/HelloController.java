@@ -46,6 +46,7 @@ public class HelloController {
 		List<Partner> partners = servicePartner.getAllPartner();
 		modelAndView.addObject("partners",partners);
 		modelAndView.setViewName("book");
+		System.out.println("return modelAndView");
 		return modelAndView;
 	}
 	

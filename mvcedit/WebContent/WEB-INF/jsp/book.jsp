@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,17 +12,19 @@
 </head>
 <body>
 
-<div style="margin-bottom:20px">
-<a href="logout">Logout</a>
-</div>
+	<div style="margin-bottom: 20px">
+		<a href="logout">Logout</a>
+	</div>
 
-<a href="hello">Hello world</a> <br />
+	<a href="hello">Hello world</a>
+	<br />
 
 
-<table>
+
+	<table>
 		<thead>
 			<tr>
-			    <th>id</th>
+				<th>id</th>
 				<th>phone</th>
 				<th>firstName</th>
 				<th>lastName</th>
@@ -30,16 +34,17 @@
 		<tbody>
 			<c:forEach items="${partners}" var="partner">
 				<tr>
-				    <td>${partner.id}</td>
+					<td>${partner.id}</td>
 					<td>${partner.phone}</td>
 					<td>${partner.firstName}</td>
 					<td>${partner.lastName}</td>
-					<td>${partner.bankUser}</td>
+					<td><sec:authorize access="hasRole('ADMIN')">
+					${partner.bankUser}
+					</sec:authorize></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-
 
 </body>
 </html>
