@@ -22,7 +22,7 @@
 	<!-- START SPRING MVC -->
 	<!-- package for scan controllers and inject -->
 	<context:component-scan base-package="org.mvcedit" />
-	
+	<context:annotation-config /> <!-- <<-add->> -->
 	<!-- search View -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -83,6 +83,8 @@
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/hello"
 			access="isAuthenticated()" />
+		<security:intercept-url pattern="/test.in"
+			access="ADMIN" />
 
 		<security:logout logout-url="/logout" />
 		<security:remember-me user-service-ref="serviceUser"

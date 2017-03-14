@@ -17,6 +17,7 @@
 	</div>
 
 	<a href="hello">Hello world</a>
+	<a href="test.in">TEST inbest</a>
 	<br />
 
 

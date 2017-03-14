@@ -32,6 +32,8 @@
         <url-pattern>/login.jsp</url-pattern>
         <url-pattern>/book</url-pattern>
         <url-pattern>/login</url-pattern>
+          <url-pattern>/hello</url-pattern>
+          <url-pattern>*.in</url-pattern>
     </servlet-mapping>
    
   

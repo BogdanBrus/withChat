@@ -26,18 +26,6 @@ public class HelloController {
 	}
 	
 	
-	@RequestMapping("/hi")
-	public ModelAndView hiWorld(){
-		String msg = "I am message from controller hi";
-		return new ModelAndView("hi","message", msg);
-	}
-	
-	@RequestMapping( "/newWorld")
-	public ModelAndView newWorld(){
-		String msg = "I am message from controller newWorld";
-		return new ModelAndView("newWorld","message", msg);
-	}
-	
 	//for hibernate
 	@RequestMapping("/book")
 	public ModelAndView allList() {
@@ -46,7 +34,6 @@ public class HelloController {
 		List<Partner> partners = servicePartner.getAllPartner();
 		modelAndView.addObject("partners",partners);
 		modelAndView.setViewName("book");
-		System.out.println("return modelAndView");
 		return modelAndView;
 	}
 	
