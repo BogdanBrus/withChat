@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
         http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.3.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
-        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+        http://www.springframework.org/schema/security  http://www.springframework.org/schema/security/spring-security.xsd
         http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
         http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd
         http://www.springframework.org/schema/p http://www.springframework.org/schema/p.xsd
@@ -71,24 +71,27 @@
 	<security:http pattern="/css/**" security="none" />
 	<security:http pattern="/images/**" security="none" />
 	<security:http pattern="/js/**" security="none" />
-  
-	<security:http auto-config="true" use-expressions="true" > <!-- access-denied-page="/denied" -->
-		
+	
+	
+	<security:http auto-config="true" use-expressions="true" > 
+    <security:access-denied-handler error-page="/access-denied"/> <!--ACCES DENIED PAGE-->
 		<security:form-login login-page="/login"
 			login-processing-url="/login" username-parameter="username"
-			password-parameter="password" default-target-url="/book"
-			always-use-default-target="true" authentication-failure-url="/login.jsp?error=invalidLoginPassword" />
+			password-parameter="password" default-target-url="/home"
+			always-use-default-target="true" authentication-failure-url="/login.jsp?error=invalidLoginPassword" 
+		/>
 
-		<security:intercept-url pattern="/book"
+		<security:intercept-url pattern="/home"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/hello"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/test.in"
-			access="ADMIN" />
+			access="hasRole('ADMIN')" />
 
 		<security:logout logout-url="/logout" />
 		<security:remember-me user-service-ref="serviceUser"
 			key="lesson_key" /> <!-- ServiceUser - class for realization UserDetailsService -->
+			
 	</security:http>
 	
 	 

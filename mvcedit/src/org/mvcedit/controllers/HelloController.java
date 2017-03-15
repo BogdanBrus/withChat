@@ -20,28 +20,36 @@ public class HelloController {
 	private ServicePartner servicePartner;
 	
 	@RequestMapping("/hello")
-	public ModelAndView helloWorld(){
+	public ModelAndView fromHello(){
 		String msg = "I am message from controller hello";
 		return new ModelAndView("hello","message", msg);
 	}
 	
 	
 	//for hibernate
-	@RequestMapping("/book")
-	public ModelAndView allList() {
+	@RequestMapping("/home")
+	public ModelAndView fromHome() {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		List<Partner> partners = servicePartner.getAllPartner();
 		modelAndView.addObject("partners",partners);
-		modelAndView.setViewName("book");
+		modelAndView.setViewName("home");
 		return modelAndView;
 	}
 	
 	@RequestMapping("/login")
-	public ModelAndView log(){
+	public ModelAndView fromLogin(){
 		ModelAndView modelAndView = new ModelAndView();
 		
 		modelAndView.setViewName("login");
+		return modelAndView;
+
+	}
+	
+	@RequestMapping("/access-denied")
+	public ModelAndView fromAccessDenied(){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("access-denied");
 		return modelAndView;
 
 	}

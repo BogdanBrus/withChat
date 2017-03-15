@@ -28,12 +28,14 @@
     
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/book.jsp</url-pattern>
+        <url-pattern>/home.jsp</url-pattern>
         <url-pattern>/login.jsp</url-pattern>
-        <url-pattern>/book</url-pattern>
+        <url-pattern>/home</url-pattern>
         <url-pattern>/login</url-pattern>
           <url-pattern>/hello</url-pattern>
           <url-pattern>*.in</url-pattern>
+           <url-pattern>/access-denied</url-pattern>
+          
     </servlet-mapping>
    
   
@@ -52,7 +54,10 @@
   <url-pattern>/*</url-pattern>
   </filter-mapping>
    <!-- END SPRING SECURITY -->
-  
+  <error-page>
+        <error-code>403</error-code>
+        <location>/accessDenied</location>
+    </error-page>
 
   
 </web-app>
