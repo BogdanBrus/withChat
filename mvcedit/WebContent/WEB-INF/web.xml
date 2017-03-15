@@ -35,14 +35,9 @@
           <url-pattern>/hello</url-pattern>
           <url-pattern>*.in</url-pattern>
            <url-pattern>/access-denied</url-pattern>
-          
     </servlet-mapping>
    
   
- 
-
-
-
   <!-- START SPRING SECURITY -->
   <filter>
   <filter-name>springSecurityFilterChain</filter-name>
@@ -54,10 +49,7 @@
   <url-pattern>/*</url-pattern>
   </filter-mapping>
    <!-- END SPRING SECURITY -->
-  <error-page>
-        <error-code>403</error-code>
-        <location>/accessDenied</location>
-    </error-page>
+  
 
   
 </web-app>
