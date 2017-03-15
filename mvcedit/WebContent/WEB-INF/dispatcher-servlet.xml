@@ -84,7 +84,7 @@
 		<security:intercept-url pattern="/home"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/hello"
-			access="isAuthenticated()" />
+			access="permitAll" />
 		<security:intercept-url pattern="/test.in"
 			access="hasRole('ADMIN')" />
 
