@@ -7,7 +7,7 @@ public class R {
 	
 	//log properties file
 	public static class LogConst {
-		public static final String LOG_PROPERTIES_FILE = "./src/log4j.properties";
+		public static final String LOG_PROPERTIES_FILE = "C://Users/Богдан/git/mvcedit/mvcedit/src/log4j.properties";
 	}
 	
 	

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.log4j.Logger;
 import org.mvcedit.models.Partner;
 import org.mvcedit.services.ServicePartner;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,8 @@ public class HelloController {
 	@RequestMapping("/home")
 	public ModelAndView fromHome() {
 		ModelAndView modelAndView = new ModelAndView();
+		Logger logger = log.LogInst.getLogger();
+		logger.info("Logger work at /home!");
 		
 		List<Partner> partners = servicePartner.getAllPartner();
 		modelAndView.addObject("partners",partners);

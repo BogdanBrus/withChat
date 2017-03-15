@@ -27,6 +27,7 @@
 		<mysql_version>5.1.41</mysql_version>
 		<jstl_version>1.2</jstl_version>
 		<inject_version>1</inject_version>
+		<log4j_version>1.2.17</log4j_version>
 	</properties>
 	<dependencies>
 
@@ -129,20 +130,9 @@
 
 		<!-- log4j -->
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>${log4j_version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j_version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
-		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<version>${log4j_version}</version>
 		</dependency>
 
 	</dependencies>
