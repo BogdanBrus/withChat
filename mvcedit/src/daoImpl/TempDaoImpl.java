@@ -70,7 +70,7 @@ public class TempDaoImpl implements Dao{
 			template(arr);
 		}
 
-	    public Object getObj(int id) throws SQLException, NullPointerException {
+	    public Object getObj(String id) throws SQLException, NullPointerException {
 			
 			arr[0] = 2;//get
 			arr[1] = id;

@@ -1,15 +1,19 @@
 package javaTest;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
+import org.mvcedit.models.Message;
 import org.mvcedit.models.Partner;
 
 import daoImpl.TempDaoImpl;
+import factory.Factory;
 
 public class testFactory {
 
-	public static void main(String[] args) throws SQLException {
+	public static void test(){
 		
 		//create member of table
 		/*Partner partner = new Partner();
@@ -91,10 +95,32 @@ public class testFactory {
 		if( partner != null) System.out.println(partner.getBankUser());
 	    ***********************************/
 		
+		/*********************MESSAGE TEST***************
+		Message message = new Message();
+	
+		Factory factory = Factory.getInstance();
+		TempDaoImpl tempDaoImpl= factory.getObjDao(message);
 		
 		
 		
-		System.out.println("End");
+		try {
+			List<Object> list = tempDaoImpl.getListObj();
+			Iterator<Object> it = list.iterator();
+			
+			while(it.hasNext()){
+				Message mas =(Message) it.next();
+				System.out.println(mas.getTime());	
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	/************************************/
+		
+		//System.out.println("End");
+		Message message = new Message();
+		TempDaoImpl MessageDao = Factory.getTempDaoImpl(message);
+		
+		
 
 	}
 

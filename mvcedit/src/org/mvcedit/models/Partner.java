@@ -11,32 +11,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="partners")
-public class Partner extends Model implements Serializable {// extends Model
+public class Partner extends Visitor implements Serializable {// extends Model
 	
 	private static final long serialVersionUID = 1L;
-
 
 	public Partner() {
 		super();
 	}
-	public Partner(int id) {
-		super(id);
-	}
 	
-	@Id
-	@Column(name="id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	
-	@Id
-	@Column(name="phone", unique = true)
-	private int phone;
 	@Column
 	private String bankUser;
-	@Column
-	private String firstName;
-	@Column
-	private String lastName;
 	@Column
 	private String vk;
 	@Column
@@ -49,35 +33,12 @@ public class Partner extends Model implements Serializable {// extends Model
 	private String oSebe;
 	
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getPhone() {
-		return phone;
-	}
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
+	
 	public String getBankUser() {
 		return bankUser;
 	}
 	public void setBankUser(String bankUser) {
 		this.bankUser = bankUser;
-	}
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
 	}
 	public String getVk() {
 		return vk;

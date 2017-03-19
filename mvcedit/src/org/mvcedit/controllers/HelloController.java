@@ -20,7 +20,7 @@ public class HelloController {
 	@Inject
 	private ServicePartner servicePartner;
 	
-	@RequestMapping("/hello")
+	@RequestMapping("/hello")//hello
 	public ModelAndView fromHello(){
 		String msg = "I am message from controller hello";
 		return new ModelAndView("hello","message", msg);
@@ -31,8 +31,11 @@ public class HelloController {
 	@RequestMapping("/home")
 	public ModelAndView fromHome() {
 		ModelAndView modelAndView = new ModelAndView();
-		Logger logger = log.LogInst.getLogger();
-		logger.info("Logger work at /home!");
+		
+		//Logger logger = log.LogInst.getLogger();
+		//logger.info("Logger work at /home!");
+		javaTest.testFactory.test();
+		
 		
 		List<Partner> partners = servicePartner.getAllPartner();
 		modelAndView.addObject("partners",partners);
